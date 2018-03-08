@@ -1,0 +1,29 @@
+
+/* Your code goes here */
+.container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-content: space-around;
+	align-items: flex-start;
+	border: 1px solid #fff;
+	flex-wrap: wrap;
+	height: 300px;
+	width: 500px;
+}
+
+.container div {
+	float: right;
+}
+
+// div {
+//     width: 100px;
+//     height: 50px;
+//     background: grey;
+//     -webkit-transition: width 2s; /* Safari */
+//     transition: width 2s;
+// }
+//
+// div:hover {
+//     width: 150px;
+// }

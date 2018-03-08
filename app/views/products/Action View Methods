@@ -1,0 +1,12 @@
+ACTION VIEW METHODS:-
+
+1) FORM
+a) form_for:- takes an object and helps us to build an html form
+b) text_field:- to give an input area(one-line)
+c) text_area:- multiple line
+d) check_box:- generally used when attribute type is boolean
+e)submit:- to sumbit the query
+f)date:-
+g)date_select:-
+h)collection_select:- takes 4 arguments(attribute, data-source, primary-key, the column names to be displayed as values in dropdown) takes option 'prompt'
+it is always used on a attribute which will be a foreign key reference

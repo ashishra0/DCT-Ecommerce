@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ecommerce</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="assets/stylesheets/base.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://localhost:3000/"><b>DCT KART</b></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="http://localhost:3000/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+    </ul>
+      <ul class="nav navbar-nav navbar-right">
+      <li><a href="http://localhost:3000/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+      <li><a href="http://localhost:3000/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li><a href="#"><span class="glyphicon glyphicon-phone"></span> Contact</a></li>
+      <li><a href="http://localhost:3000/categories">Categories</a></li>
+      <li><a href="http://localhost:3000/products">Products</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+    </ul>
+  </div>
+</nav>
+
+<% if user_signed_in? %>
+Welcome to DCT KART, <%= current_user.email %>
+<!-- <nav class="navbar navbar-inverse"> -->
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="http://localhost:3000/users/edit">Account Setting</a></li>
+      <!-- <li class="active"><a href="http://localhost:3000/users/sign_out">Log Out</a></li> -->
+    </ul>
+  </div>
+</nav>
+
+
+
+<%= link_to "", edit_user_registration_path %>  <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+<% else %>
+<%= link_to "", new_user_session_path %>  <%= link_to "", new_user_registration_path %>
+<hr>
+<% end %>
+<!-- ~ -->
+<br/>
+<!-- ~ -->
+<%= link_to "", categories_path %>  <%= link_to "", products_path %>
+<%= notice %>
+<%= yield %>
+<i class="fa fa-copyright"></i>
+
+
+<footer class="blog-footer">
+    <p><center>Built by<a href="https://github.com/ashishra0">Ashish Rao<span class="	glyphicon glyphicon-copyright-mark"></span></a> using Rails.</p>
+  </footer>
+
+
+</body>
+</html>

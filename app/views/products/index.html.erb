@@ -1,0 +1,16 @@
+<!-- <marquee scrollamount = "10" bgcolor = "#aed00d" width="1260" height="60" behavior="scroll" style="border:solid">ASHISH RAO<br>DCT ACADEMY<br>RAILS SERVER</marquee> -->
+<h2><center> Listing products </center></h2>
+
+<% if user_signed_in? && current_user.is_admin %>
+<%= link_to "Add Products", new_product_path %>
+<% end %>
+<% if @products.empty? %>
+<p> No Products Found </p>
+<% else %>
+<ul>
+  <% @products.each do |product| %>
+  <li><%= link_to product.name, product_path(product.id) %>
+    INR <%= product.price %> -- <%= product.category_id %></li>
+    <% end %>
+  </ul>
+<% end %>

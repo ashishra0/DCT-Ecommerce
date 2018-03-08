@@ -1,0 +1,16 @@
+<h2>Add category</h2>
+<link rel="stylesheet" href="assets/stylesheets/main.css.scss">
+<%= form_for @category do |f| %>
+<% if @category.errors.any? %>
+<h3>Errors : </h3>
+<ul>
+  <% @category.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+<section class = "container">
+  <div><%= f.label :name %></div>
+  <%= f.text_field :name %> <br>
+  <%= f.submit "submit" %>
+  <% end %>
